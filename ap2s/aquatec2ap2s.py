@@ -90,7 +90,7 @@ else:
         time.sleep(1)
         ser.writelines('\n')
         time.sleep(1)
-        ser.writelines('ylb9'+meandepth+rangedepth+time_len+meantemp+sdeviatemp+'\n')
+        ser.writelines('ylbA'+meandepth+rangedepth+time_len+meantemp+sdeviatemp+'\n')
         time.sleep(3)
         print 'Sending data: '+meandepth+rangedepth+time_len+meantemp+sdeviatemp
         #print datetime.now()
