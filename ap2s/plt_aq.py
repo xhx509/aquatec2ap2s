@@ -59,7 +59,7 @@ for fn in files:
         continue 
     
     
-    df.index=df.index+pd.tseries.timedeltas.to_timedelta(4, unit='h')  #, chage it to UTC time
+    df.index=df.index-pd.tseries.timedeltas.to_timedelta(4, unit='h')  #, chage it to UTC time
     df['yd']=df.index.dayofyear+df.index.hour/24.+df.index.minute/60./24.+df.index.second/60/60./24.-1.0 #creates a yrday0 field
     #output_fmt=['yd','Unnamed: 4','Unnamed: 10']
     #dfp=df.reindex(columns=output_fmt)# found I needed to generate a new dataframe to print in this order
@@ -174,7 +174,7 @@ for fn in files:
     '''
     ax2.xaxis.set_major_formatter(dates.DateFormatter('%D %H:%M'))
     plt.gcf().autofmt_xdate()    
-    ax2.set_xlabel('UTC TIME')
+    ax2.set_xlabel('Local TIME')
     
     #ax2.xaxis.set_minor_locator(dates.HourLocator(interval=0)
     #ax2.xaxis.set_minor_formatter(dates.DateFormatter('%H'))
